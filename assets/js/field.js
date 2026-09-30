@@ -140,7 +140,7 @@
             const fadeStart = connectionRadius * .7;
             const fade = Math.min(1, (connectionRadius - distance) / (connectionRadius - fadeStart));
             const interaction = Math.max(position.interaction, next.interaction);
-            networkContext.strokeStyle = `rgba(200, 237, 120, ${( .16 + interaction * .3) * fade})`;
+            networkContext.strokeStyle = `rgba(189, 200, 107, ${( .16 + interaction * .3) * fade})`;
             networkContext.lineWidth = .75 + interaction * .4;
             networkContext.beginPath();
             networkContext.moveTo(position.x, position.y);
@@ -150,7 +150,7 @@
         });
         positions.forEach((position) => {
           networkContext.fillStyle = `rgba(227, 242, 195, ${.4 + position.interaction * .35})`;
-          networkContext.shadowColor = `rgba(200, 237, 120, ${position.interaction * .35})`;
+          networkContext.shadowColor = `rgba(189, 200, 107, ${position.interaction * .35})`;
           networkContext.shadowBlur = position.interaction * 6;
           networkContext.beginPath();
           networkContext.arc(position.x, position.y, 1.5 + position.interaction * .8, 0, Math.PI * 2);
@@ -270,7 +270,7 @@
 
     const drawConnection = (start, end) => {
       const activation = (start.activation + end.activation) / 2;
-      context.strokeStyle = `rgba(200, 237, 120, ${.025 + activation * .095})`;
+      context.strokeStyle = `rgba(189, 200, 107, ${.025 + activation * .095})`;
       context.lineWidth = .6 + activation * .55;
       context.beginPath();
       context.moveTo(start.x, start.y);
@@ -289,7 +289,7 @@
     positions.forEach((layer) => {
       layer.forEach((neuron) => {
         context.fillStyle = `rgba(227, 242, 195, ${.24 + neuron.activation * .72})`;
-        context.shadowColor = `rgba(200, 237, 120, ${neuron.activation * .42})`;
+        context.shadowColor = `rgba(189, 200, 107, ${neuron.activation * .42})`;
         context.shadowBlur = neuron.activation * 10;
         context.beginPath();
         context.arc(neuron.x, neuron.y, 2 + neuron.activation * 1.5, 0, Math.PI * 2);

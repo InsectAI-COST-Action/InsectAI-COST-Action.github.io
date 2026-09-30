@@ -6,7 +6,9 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "InsectAI connects people and open resources for image-based AI in insect monitoring and conservation."
-  favicon = "https://avatars.githubusercontent.com/u/174048868?s=64&v=4"
+  favicon = "/images/insectai-hex.png"
+  logo = "/images/insectai-logo-white.svg"
+  leafletURL = "/insectai-leaflet.pdf"
   organizationURL = "https://github.com/InsectAI-COST-Action"
   repositoriesURL = "https://github.com/orgs/InsectAI-COST-Action/repositories"
   costActionURL = "https://www.cost.eu/actions/CA22129/"
