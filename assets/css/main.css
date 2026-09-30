@@ -168,7 +168,21 @@ h1 {
 
 .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.resources, .events { padding-block: 74px 82px; }
+.resources, .events {
+  position: relative;
+  isolation: isolate;
+  padding-block: 74px 82px;
+}
+
+.constellation-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .58;
+  pointer-events: none;
+}
 
 .section-head {
   display: flex;
@@ -202,13 +216,15 @@ h2 {
 }
 
 .repo {
+  position: relative;
+  overflow: hidden;
   min-height: 210px;
   grid-column: span 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 24px;
-  background: var(--panel);
+  background: rgba(16, 35, 29, .76);
   border: 1px solid var(--line);
   border-radius: 7px;
   text-align: center;
@@ -216,7 +232,7 @@ h2 {
   transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
 }
 
-.repo:hover { transform: translateY(-3px); border-color: rgba(200, 237, 120, .7); background: #142c24; }
+.repo:hover { transform: translateY(-3px); border-color: rgba(200, 237, 120, .7); background: rgba(20, 44, 36, .93); }
 .repo:nth-child(4) { grid-column: 2 / span 2; }
 .repo:nth-child(5) { grid-column: 4 / span 2; }
 
@@ -256,7 +272,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(130px, .8fr) minmax(0, 1.2fr);
   overflow: hidden;
-  background: var(--panel);
+  background: rgba(16, 35, 29, .76);
   border: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
