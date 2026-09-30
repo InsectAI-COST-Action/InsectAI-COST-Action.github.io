@@ -5,6 +5,7 @@
   image: "/images/repo-placeholder.svg"
   imageAlt: ""
   url: "https://github.com/InsectAI-COST-Action/hardware-db"
+
 - category: "Research index"
   title: "Awesome InsectAI"
   description: "A curated collection of papers, datasets, code and pretrained models for AI-based insect monitoring."
@@ -12,6 +13,7 @@
   image: "/images/repo-placeholder.svg"
   imageAlt: ""
   url: "https://github.com/InsectAI-COST-Action/awesome-insectai"
+
 - category: "Data analysis"
   title: "Awesome Analysis Tools"
   description: "Find tools for cleaning, exploring and analysing traditional and computer-vision biodiversity records."
@@ -19,6 +21,7 @@
   image: "/images/repo-placeholder.svg"
   imageAlt: ""
   url: "https://github.com/InsectAI-COST-Action/AwesomeAnalysisTools"
+
 - category: "Learning"
   title: "InsectAI Kit for Kids"
   description: "A co-designed camera kit that invites young learners to investigate insects, ecology and computer vision."
@@ -26,6 +29,7 @@
   image: "/images/repo-placeholder.svg"
   imageAlt: ""
   url: "https://github.com/InsectAI-COST-Action/kit-for-kids"
+  
 - category: "Model registry"
   title: "Insect AI Model Database"
   description: "Documented model cards for vision-based insect detection, classification and trait quantification."
