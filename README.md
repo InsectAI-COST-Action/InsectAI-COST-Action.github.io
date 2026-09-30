@@ -20,11 +20,13 @@ Our work spans societal needs, image collection, image processing, and the analy
 
 GitHub displays an organization profile README in the Overview tab when its content is committed to `profile/README.md` in the organization's public `.github` repository. The root README in the landing-page repository does not appear on the organization profile automatically.
 
-### Preview and publish the website
+### Maintain, preview, and publish the website
 
-The site is plain HTML and CSS with no build step or dependencies. To preview it locally, open `index.html` in a browser.
+The site is built with Hugo Extended 0.167.0. Update repository cards in `data/resources.yaml` and event cards in `data/events.yaml`; the page layout, stylesheet, and cursor effect live in `layouts/` and `assets/`.
 
-To publish it, push the site files to the `InsectAI-COST-Action.github.io` repository, then open **Settings → Pages** and select the `main` branch and `/ (root)` folder under **Deploy from a branch**. The organization-root site will be available at `https://insectai-cost-action.github.io/` after deployment.
+Install Hugo Extended, then run `hugo server` from the repository root to preview changes at `http://localhost:1313/`. Run `hugo --minify` to build the site into `public/`.
+
+The GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys the site on pushes to `main`. In the repository, open **Settings → Pages** and set the build and deployment source to **GitHub Actions**. The organization-root site is available at `https://insectai-cost-action.github.io/` after deployment.
 
 ### Access control
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081713">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <title>{{ .Site.Title }}</title>
+  <link rel="icon" href="{{ .Site.Params.favicon }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="InsectAI home">
+      <img src="https://avatars.githubusercontent.com/u/174048868?s=96&v=4" alt="">
+      <span>InsectAI</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#resources">Resources</a>
+      <a href="#events">Events</a>
+      <a href="{{ .Site.Params.costActionURL }}" target="_blank" rel="noopener noreferrer">COST Action <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>InsectAI · Using image-based AI for insect monitoring &amp; conservation</p>
+      <p><a href="{{ .Site.Params.organizationURL }}" target="_blank" rel="noopener noreferrer">GitHub</a> · COST Action CA22129</p>
+    </div>
+  </footer>
+  {{ $script := resources.Get "js/field.js" | minify | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+</body>
+</html>
