@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="InsectAI connects people and open resources for image-based AI in insect monitoring and conservation.">
+  <title>InsectAI | AI for insect monitoring</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/174048868?s=64&v=4">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #193a32;
+      --forest: #173f35;
+      --leaf: #c8e36a;
+      --coral: #ef765d;
+      --paper: #f5f6ef;
+      --white: #fffefa;
+      --muted: #53675e;
+      font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--forest);
+      background-image: radial-gradient(rgba(200, 227, 106, .14) .8px, transparent .8px);
+      background-size: 18px 18px;
+      color: var(--white);
+    }
+
+    .hero-inner {
+      min-height: 410px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, .65fr);
+      align-items: center;
+      gap: 48px;
+      padding-block: 70px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--leaf);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      font-weight: 400;
+      line-height: .98;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      margin-bottom: 28px;
+      color: #e3e9df;
+      font-size: 1.1rem;
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      background: var(--leaf);
+      color: var(--forest);
+      font-size: .91rem;
+      font-weight: 750;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+
+    .button:hover { background: #d9ef8c; }
+
+    .text-link {
+      color: inherit;
+      font-size: .91rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hero-mark {
+      position: relative;
+      display: grid;
+      width: min(100%, 270px);
+      aspect-ratio: 1;
+      place-items: center;
+      justify-self: center;
+    }
+
+    .hero-mark::before, .hero-mark::after {
+      position: absolute;
+      display: block;
+      content: "";
+      border: 1px solid rgba(200, 227, 106, .65);
+      border-radius: 50%;
+      inset: 0;
+    }
+
+    .hero-mark::after { inset: 18px; border-color: rgba(255, 254, 250, .35); }
+
+    .hero-mark img {
+      width: 58%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 8px solid var(--white);
+      border-radius: 50%;
+      background: var(--white);
+      z-index: 1;
+    }
+
+    .resources { padding-block: 66px 76px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-head .eyebrow { margin-bottom: 10px; color: #547547; }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .repo {
+      min-height: 178px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid #dfe5d9;
+      border-top: 3px solid var(--leaf);
+      text-decoration: none;
+      transition: border-color .18s ease, transform .18s ease;
+    }
+
+    .repo:hover { transform: translateY(-3px); border-color: #9dad8b; }
+
+    .repo-type {
+      margin-bottom: 18px;
+      color: #607365;
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .repo strong { margin-bottom: 8px; font-size: 1.05rem; }
+
+    .repo span:last-child {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .more-resources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 26px;
+      margin-top: 26px;
+      font-size: .91rem;
+      font-weight: 700;
+    }
+
+    .more-resources a { text-decoration-color: #91a27e; text-underline-offset: 4px; }
+
+    footer {
+      padding-block: 22px;
+      background: #e8ece2;
+      color: #506258;
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px 24px;
+    }
+
+    footer p { margin: 0; }
+    footer a { text-underline-offset: 3px; }
+
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: minmax(0, 1fr) 190px; gap: 20px; }
+      .repo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 580px) {
+      .wrap { width: min(100% - 36px, 1120px); }
+      .topbar { min-height: 70px; }
+      .nav-links { gap: 15px; font-size: .82rem; }
+      .nav-links a:first-child { display: none; }
+      .hero-inner { min-height: auto; grid-template-columns: 1fr; gap: 32px; padding-block: 54px 48px; }
+      .hero-mark { width: 155px; grid-row: 1; justify-self: start; }
+      .hero-copy { font-size: 1rem; }
+      .resources { padding-block: 50px 56px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .repo-grid { grid-template-columns: 1fr; }
+      .repo { min-height: 142px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="InsectAI home">
+      <img src="https://avatars.githubusercontent.com/u/174048868?s=96&v=4" alt="">
+      <span>InsectAI</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#resources">Resources</a>
+      <a href="https://www.cost.eu/actions/CA22129/" target="_blank" rel="noreferrer">COST Action <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">COST Action CA22129</p>
+          <h1 id="page-title">InsectAI</h1>
+          <p class="hero-copy">A community connecting ecology, technology and open resources for image-based insect monitoring and conservation.</p>
+          <div class="actions">
+            <a class="button" href="#resources">Explore the resources <span aria-hidden="true">&nbsp;→</span></a>
+            <a class="text-link" href="https://github.com/InsectAI-COST-Action" target="_blank" rel="noreferrer">GitHub organization <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <img src="https://avatars.githubusercontent.com/u/174048868?s=240&v=4" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="resources wrap" id="resources" aria-labelledby="resources-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Open work</p>
+          <h2 id="resources-title">Start with a resource.</h2>
+        </div>
+        <a class="text-link" href="https://github.com/orgs/InsectAI-COST-Action/repositories" target="_blank" rel="noreferrer">All repositories <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="repo-grid">
+        <a class="repo" href="https://github.com/InsectAI-COST-Action/awesome-insectai" target="_blank" rel="noreferrer">
+          <span class="repo-type">Explore</span>
+          <strong>Awesome InsectAI</strong>
+          <span>A curated index of papers, datasets, models and code.</span>
+        </a>
+        <a class="repo" href="https://github.com/InsectAI-COST-Action/example-datasets" target="_blank" rel="noreferrer">
+          <span class="repo-type">Data</span>
+          <strong>Example datasets</strong>
+          <span>Small raw and standardized datasets from the InsectAI datathon.</span>
+        </a>
+        <a class="repo" href="https://github.com/InsectAI-COST-Action/insect-model-zoo" target="_blank" rel="noreferrer">
+          <span class="repo-type">Models</span>
+          <strong>Insect model zoo</strong>
+          <span>Browse insect AI models shared by the community.</span>
+        </a>
+        <a class="repo" href="https://github.com/InsectAI-COST-Action/AwesomeAnalysisTools" target="_blank" rel="noreferrer">
+          <span class="repo-type">Analysis</span>
+          <strong>Analysis tools</strong>
+          <span>Tools for exploring and analysing biodiversity records.</span>
+        </a>
+      </div>
+
+      <div class="more-resources">
+        <a href="https://www.cost.eu/actions/CA22129/" target="_blank" rel="noreferrer">About the COST Action ↗</a>
+        <a href="https://insectai.eu/" target="_blank" rel="noreferrer">Current InsectAI website ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>InsectAI · Using image-based AI for insect monitoring &amp; conservation</p>
+      <p><a href="https://github.com/InsectAI-COST-Action" target="_blank" rel="noreferrer">GitHub</a> · COST Action CA22129</p>
+    </div>
+  </footer>
+</body>
+</html>
