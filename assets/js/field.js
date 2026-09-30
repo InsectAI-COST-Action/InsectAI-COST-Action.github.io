@@ -3,6 +3,24 @@
   const canvas = document.querySelector(".field-canvas");
   if (!hero || !canvas) return;
 
+  const resourceGrid = document.querySelector(".repo-grid");
+  const resourceCards = [...document.querySelectorAll(".repo[data-working-groups]")];
+  const resourceFilters = [...document.querySelectorAll("[data-working-group-filter]")];
+  const resourceCount = document.querySelector(".resource-count");
+  resourceFilters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const selectedGroup = filter.dataset.workingGroupFilter;
+      resourceFilters.forEach((button) => button.setAttribute("aria-pressed", String(button === filter)));
+      resourceCards.forEach((card) => {
+        const groups = card.dataset.workingGroups.split(",");
+        card.hidden = selectedGroup !== "all" && !groups.includes(selectedGroup);
+      });
+      const visibleCount = resourceCards.filter((card) => !card.hidden).length;
+      resourceGrid.classList.toggle("is-filtered", selectedGroup !== "all");
+      resourceCount.textContent = `${visibleCount} resource${visibleCount === 1 ? "" : "s"}`;
+    });
+  });
+
   const context = canvas.getContext("2d");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");

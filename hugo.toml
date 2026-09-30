@@ -10,4 +10,5 @@ disableKinds = ["taxonomy", "term"]
   organizationURL = "https://github.com/InsectAI-COST-Action"
   repositoriesURL = "https://github.com/orgs/InsectAI-COST-Action/repositories"
   costActionURL = "https://www.cost.eu/actions/CA22129/"
+  joinURL = "https://www.cost.eu/actions/CA22129/#tabs+Name:Working%20Groups%20and%20Membership"
   officialWebsiteURL = "https://insectai.eu/"

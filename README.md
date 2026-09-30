@@ -22,7 +22,7 @@ GitHub displays an organization profile README in the Overview tab when its cont
 
 ### Maintain, preview, and publish the website
 
-The site is built with Hugo Extended 0.167.0. Update repository cards in `data/resources.yaml` and event cards in `data/events.yaml`; the page layout, stylesheet, and cursor effect live in `layouts/` and `assets/`. Each repository entry accepts an `image` URL or site path and an `imageAlt` description. New entries use the shared placeholder at `static/images/repo-placeholder.svg` unless another image is specified.
+The site is built with Hugo Extended 0.167.0. Update repository cards in `data/resources.yaml` and event cards in `data/events.yaml`; the page layout, stylesheet, and cursor effect live in `layouts/` and `assets/`. Repository entries can set an `image` URL or site path, `imageAlt` description, and `workingGroups` list (`WG1`–`WG4`) to control the browse filters. New entries use the shared placeholder at `static/images/repo-placeholder.svg` unless another image is specified.
 
 Install Hugo Extended, then run `hugo server` from the repository root to preview changes at `http://localhost:1313/`. Run `hugo --minify` to build the site into `public/`.
 

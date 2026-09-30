@@ -25,11 +25,23 @@
     <a class="text-link" href="{{ .Site.Params.repositoriesURL }}" target="_blank" rel="noopener noreferrer">All repositories <span aria-hidden="true">↗</span></a>
   </div>
 
+  <div class="resource-controls">
+    <div class="resource-filters" role="group" aria-label="Filter resources by InsectAI working group">
+      <button class="resource-filter" type="button" data-working-group-filter="all" aria-pressed="true">All resources</button>
+      <button class="resource-filter" type="button" data-working-group-filter="WG1" aria-label="Filter by WG1 Societal Needs" aria-pressed="false">WG1 <span>Needs</span></button>
+      <button class="resource-filter" type="button" data-working-group-filter="WG2" aria-label="Filter by WG2 Image Collection" aria-pressed="false">WG2 <span>Collection</span></button>
+      <button class="resource-filter" type="button" data-working-group-filter="WG3" aria-label="Filter by WG3 Image Processing" aria-pressed="false">WG3 <span>Processing</span></button>
+      <button class="resource-filter" type="button" data-working-group-filter="WG4" aria-label="Filter by WG4 Data Analysis and Integration" aria-pressed="false">WG4 <span>Analysis</span></button>
+    </div>
+    <span class="resource-count" aria-live="polite">{{ len hugo.Data.resources }} resources</span>
+  </div>
+
   <div class="repo-grid">
     {{ range hugo.Data.resources }}
-    <a class="repo" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+    <a class="repo" href="{{ .url }}" data-working-groups="{{ delimit .workingGroups "," }}" target="_blank" rel="noopener noreferrer">
       <img class="repo-image" src="{{ .image | default "/images/repo-placeholder.svg" }}" alt="{{ .imageAlt | default "" }}" loading="lazy" decoding="async">
       <span class="repo-type">{{ .category }}</span>
+      <span class="repo-working-groups" aria-label="Working groups">{{ range .workingGroups }}<span>{{ . }}</span>{{ end }}</span>
       <strong>{{ .title }}</strong>
       <span class="repo-description">{{ .description }}</span>
       <span class="repo-arrow" aria-hidden="true">↗</span>
