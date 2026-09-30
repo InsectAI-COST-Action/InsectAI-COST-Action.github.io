@@ -4,6 +4,23 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/deploy.yml"
+      - "assets/**"
+      - "archetypes/**"
+      - "config/**"
+      - "content/**"
+      - "data/**"
+      - "layouts/**"
+      - "static/**"
+      - "themes/**"
+      - "go.mod"
+      - "go.sum"
+      - "hugo.toml"
+      - "hugo.yaml"
+      - "hugo.yml"
+      - "hugo.json"
+      - ".gitmodules"
   workflow_dispatch:
 
 permissions:
