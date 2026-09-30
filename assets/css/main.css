@@ -77,8 +77,6 @@ a:focus-visible {
   position: relative;
   overflow: hidden;
   background-color: var(--forest);
-  background-image: linear-gradient(rgba(208, 235, 198, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(208, 235, 198, .035) 1px, transparent 1px);
-  background-size: 48px 48px;
   color: var(--white);
   isolation: isolate;
 }
@@ -199,23 +197,28 @@ h2 {
 
 .repo-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .repo {
   min-height: 210px;
+  grid-column: span 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 23px;
+  align-items: center;
+  padding: 24px;
   background: var(--panel);
   border: 1px solid var(--line);
+  border-radius: 7px;
+  text-align: center;
   text-decoration: none;
   transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
 }
 
 .repo:hover { transform: translateY(-3px); border-color: rgba(200, 237, 120, .7); background: #142c24; }
+.repo:nth-child(4) { grid-column: 2 / span 2; }
+.repo:nth-child(5) { grid-column: 4 / span 2; }
 
 .repo-type {
   margin-bottom: 22px;
@@ -334,7 +337,10 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
 
 @media (max-width: 800px) {
   .hero-inner { min-height: 440px; }
-  .repo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .repo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .repo { grid-column: span 2; }
+  .repo:nth-child(4) { grid-column: auto; }
+  .repo:nth-child(5) { grid-column: 2 / span 2; }
   .event-grid { grid-template-columns: 1fr; }
 }
 
@@ -351,6 +357,7 @@ footer a { color: var(--ink); text-underline-offset: 3px; }
   .section-head { align-items: flex-start; flex-direction: column; }
   .repo-grid { grid-template-columns: 1fr; }
   .repo { min-height: 180px; }
+  .repo:nth-child(n) { grid-column: 1; }
   .event { grid-template-columns: 1fr; }
   .event img { height: 190px; min-height: 0; }
   .event-copy { min-height: 220px; }
