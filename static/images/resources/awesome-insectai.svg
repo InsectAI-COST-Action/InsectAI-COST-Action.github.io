@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#0B1A15"/>
+  <circle cx="321" cy="177" r="138" fill="#10271E" stroke="#344D38" stroke-width="2"/>
+  <g transform="rotate(-9 205 184)">
+    <rect x="83" y="93" width="164" height="201" rx="9" fill="#DCE3C9"/>
+    <rect x="101" y="111" width="127" height="76" rx="5" fill="#A9C5A4"/>
+    <path d="M119 160c14-34 30-34 44-1 10-23 25-25 43-3" stroke="#315447" stroke-width="5" stroke-linecap="round"/>
+    <path d="M103 211h117m-117 17h94m-94 17h107m-107 17h71" stroke="#73836D" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(8 443 188)">
+    <rect x="384" y="76" width="171" height="220" rx="10" fill="#18362B" stroke="#647650" stroke-width="3"/>
+    <path d="M407 108h123m-123 13h87" stroke="#BAC79E" stroke-opacity=".62" stroke-width="4" stroke-linecap="round"/>
+    <rect x="407" y="145" width="54" height="54" rx="5" fill="#264D3C"/>
+    <path d="M415 185c9-17 18-20 27-4 5-10 10-13 17-8" stroke="#C7D591" stroke-width="3" stroke-linecap="round"/>
+    <path d="M475 153h54m-54 14h42m-42 14h48m-108 37h108m-108 14h92m-92 14h104m-104 14h66" stroke="#83947A" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="419" cy="267" r="4" fill="#FF8966"/><circle cx="434" cy="267" r="4" fill="#BDC86B"/><circle cx="449" cy="267" r="4" fill="#83B6A0"/>
+  </g>
+  <path d="M247 182h37m73 0h27" stroke="#BDC86B" stroke-width="3" stroke-dasharray="4 8"/>
+  <circle cx="320" cy="180" r="54" fill="#24523E" stroke="#BDC86B" stroke-width="3"/>
+  <path d="M320 157c-16-22-36-11-32 8 3 13 18 27 32 39 15-13 29-27 32-40 4-18-17-29-32-7Z" fill="#B9CA8D" stroke="#E0E6CF" stroke-width="3"/>
+  <path d="M320 151v59m-7-43-14-9m21 15 15-10m-22 26-13 8m20-9 12 9" stroke="#365943" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="321" cy="180" r="69" stroke="#8FA174" stroke-opacity=".3" stroke-width="2" stroke-dasharray="2 10"/>
+</svg>
