@@ -28,6 +28,7 @@
   <div class="repo-grid">
     {{ range hugo.Data.resources }}
     <a class="repo" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+      <img class="repo-image" src="{{ .image | default "/images/repo-placeholder.svg" }}" alt="{{ .imageAlt | default "" }}" loading="lazy" decoding="async">
       <span class="repo-type">{{ .category }}</span>
       <strong>{{ .title }}</strong>
       <span class="repo-description">{{ .description }}</span>

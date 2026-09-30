@@ -218,7 +218,7 @@ h2 {
 .repo {
   position: relative;
   overflow: hidden;
-  min-height: 210px;
+  min-height: 340px;
   grid-column: span 2;
   display: flex;
   flex-direction: column;
@@ -235,6 +235,17 @@ h2 {
 .repo:hover { transform: translateY(-3px); border-color: rgba(200, 237, 120, .7); background: rgba(20, 44, 36, .93); }
 .repo:nth-child(4) { grid-column: 2 / span 2; }
 .repo:nth-child(5) { grid-column: 4 / span 2; }
+
+.repo-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.75;
+  margin-bottom: 18px;
+  object-fit: cover;
+  background: #0b1c16;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
 
 .repo-type {
   margin-bottom: 22px;

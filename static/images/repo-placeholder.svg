@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" fill="none">
+  <defs>
+    <linearGradient id="background" x1="90" y1="40" x2="1080" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17382D"/>
+      <stop offset="1" stop-color="#091713"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientTransform="matrix(0 390 -610 0 600 340)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8ED78" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#C8ED78" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" stroke="#C8ED78" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v680H0z"/>
+  <path fill="url(#wash)" d="M0 0h1200v680H0z"/>
+  <path fill="url(#grid)" d="M0 0h1200v680H0z"/>
+  <g stroke="#C8ED78" stroke-opacity=".42" stroke-width="2">
+    <path d="m128 150 102 64 92-97 116 145 107-63 109 110 118-160 111 76 99-91"/>
+    <path d="m128 150 194-33m0 0 116 145m0 0 107-63m107 173 118-160m0 0 111 76m0 0 99-91" stroke-opacity=".22"/>
+    <path d="m230 214 88 207 118-159m107-63 91 218 118-160m111 76 101 192" stroke-opacity=".18"/>
+  </g>
+  <g fill="#E3F2C3">
+    <circle cx="128" cy="150" r="6"/><circle cx="230" cy="214" r="5"/>
+    <circle cx="322" cy="117" r="7"/><circle cx="416" cy="359" r="5"/>
+    <circle cx="545" cy="199" r="6"/><circle cx="652" cy="309" r="7"/>
+    <circle cx="770" cy="149" r="5"/><circle cx="888" cy="225" r="7"/>
+    <circle cx="999" cy="301" r="5"/><circle cx="1098" cy="134" r="6"/>
+    <circle cx="318" cy="421" r="4"/><circle cx="771" cy="367" r="4"/>
+  </g>
+  <g stroke="#C8ED78" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M600 255v152m0-101c-47-82-119-88-142-54 14 58 63 95 142 68m0-14c47-82 119-88 142-54-14 58-63 95-142 68" stroke-opacity=".78" stroke-width="5"/>
+    <path d="m582 304-76-45m94 45 76-45M584 362l-92 28m124-28 92 28m-107 13-54 75m78-75 54 75" stroke-opacity=".58" stroke-width="4"/>
+    <path d="m592 252-22-37m38 37 22-37" stroke-opacity=".75" stroke-width="3"/>
+  </g>
+  <g fill="#FF8966">
+    <circle cx="600" cy="269" r="11"/><circle cx="600" cy="311" r="8"/>
+    <circle cx="600" cy="351" r="7"/><circle cx="600" cy="390" r="5"/>
+  </g>
+</svg>
