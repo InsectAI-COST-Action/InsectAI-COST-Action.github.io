@@ -17,6 +17,7 @@
   let previousTime = 0;
   let animationStart = null;
   const layerSizes = [3, 5, 8, 6, 4];
+  const layerSpreads = [.48, .84, 1, .84, .48];
   const pointer = { x: -1000, y: -1000, targetX: -1000, targetY: -1000 };
 
   const resize = () => {
@@ -30,7 +31,9 @@
     animationStart = null;
     layers = layerSizes.map((count, layerIndex) => Array.from({ length: count }, (_, neuronIndex) => {
       const anchorX = width * (.08 + layerIndex * .21);
-      const anchorY = height * (.14 + (neuronIndex + .5) * .72 / count);
+      const layerSpread = layerSpreads[layerIndex];
+      const rowOffset = (neuronIndex + .5) / count - .5;
+      const anchorY = height * (.5 + rowOffset * .72 * layerSpread);
       return {
         layerIndex,
         anchorX,
@@ -39,6 +42,7 @@
         y: anchorY,
         vx: 0,
         vy: 0,
+        interaction: 0,
         phase: Math.random() * Math.PI * 2
       };
     }));
@@ -60,16 +64,17 @@
     context.clearRect(0, 0, width, height);
 
     const positions = layers.map((layer) => layer.map((neuron) => {
-      const wander = .005 * drift * step;
       neuron.vx += (neuron.anchorX - neuron.x) * .00002 * step;
       neuron.vy += (neuron.anchorY - neuron.y) * .00002 * step;
-      neuron.vx += (Math.random() - .5) * wander;
-      neuron.vy += (Math.random() - .5) * wander;
 
       const dx = neuron.x - pointer.x;
       const dy = neuron.y - pointer.y;
       const distance = Math.hypot(dx, dy);
       const proximity = Math.max(0, 1 - distance / 220);
+      neuron.interaction += (proximity - neuron.interaction) * Math.min(.12 * step, 1);
+      const wander = .0075 * drift * (1 + 2.5 * neuron.interaction) * step;
+      neuron.vx += (Math.random() - .5) * wander;
+      neuron.vy += (Math.random() - .5) * wander;
 
       neuron.vx *= .99;
       neuron.vy *= .99;
