@@ -37,3 +37,11 @@
   image: "/images/repo-placeholder.svg"
   imageAlt: ""
   url: "https://github.com/InsectAI-COST-Action/model-db"
+
+- category: "Standards"
+  title: "Insect AI Data Standards"
+  description: "The definitive online reference on data and metadata standards for labels, media, and models and for insect camera systems."
+  workingGroups: ["WG2", "WG3"]
+  image: "/images/repo-placeholder.svg"
+  imageAlt: ""
+  url: "https://github.com/InsectAI-COST-Action/standards"
