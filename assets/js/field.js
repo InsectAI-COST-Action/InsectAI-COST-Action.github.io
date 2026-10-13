@@ -140,7 +140,7 @@
             const fadeStart = connectionRadius * .7;
             const fade = Math.min(1, (connectionRadius - distance) / (connectionRadius - fadeStart));
             const interaction = Math.max(position.interaction, next.interaction);
-            networkContext.strokeStyle = `rgba(189, 200, 107, ${( .16 + interaction * .3) * fade})`;
+            networkContext.strokeStyle = `rgba(189, 200, 107, ${( .075 + interaction * .3) * fade})`;
             networkContext.lineWidth = .75 + interaction * .4;
             networkContext.beginPath();
             networkContext.moveTo(position.x, position.y);
@@ -270,7 +270,7 @@
 
     const drawConnection = (start, end) => {
       const activation = (start.activation + end.activation) / 2;
-      context.strokeStyle = `rgba(189, 200, 107, ${.025 + activation * .095})`;
+      context.strokeStyle = `rgba(189, 200, 107, ${.075 + activation * .3})`;
       context.lineWidth = .6 + activation * .55;
       context.beginPath();
       context.moveTo(start.x, start.y);
@@ -288,8 +288,8 @@
 
     positions.forEach((layer) => {
       layer.forEach((neuron) => {
-        context.fillStyle = `rgba(227, 242, 195, ${.24 + neuron.activation * .72})`;
-        context.shadowColor = `rgba(189, 200, 107, ${neuron.activation * .42})`;
+        context.fillStyle = `rgba(227, 242, 195, ${.3 + neuron.activation * .5})`;
+        context.shadowColor = `rgba(189, 200, 107, ${neuron.activation * .5})`;
         context.shadowBlur = neuron.activation * 10;
         context.beginPath();
         context.arc(neuron.x, neuron.y, 2 + neuron.activation * 1.5, 0, Math.PI * 2);
